@@ -1,0 +1,134 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* VARIABLES */
+:root {
+    /* Colors */
+    --first-color: #003366;
+    --second-color: #00274e;
+    --third-color: #1C82AD;
+    --fourth-color: #03C988;
+    --body-color: whitesmoke;
+    --fifth-color: #c9ac0a;
+    --border-color: rgba(207, 203, 203, 0.329);
+
+    --font: "Poppins", sans-serif;
+}
+
+/* General CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+input::placeholder{
+    color: white;
+}
+
+select:focus,
+input:focus{
+    outline: none;
+}
+
+input::-webkit-search-cancel-button{
+    display: none;
+}
+
+.first-color {
+    color: var(--first-color);
+}
+
+.fourth-color {
+    color: var(--fourth-color);
+}
+
+.background-first-color {
+    background-color: var(--first-color);
+}
+
+.background-second-color {
+    background-color: var(--second-color);
+}
+
+.background-third-color {
+    background-color: var(--third-color);
+}
+
+.background-fourth-color {
+    background-color: var(--fourth-color);
+}
+
+.border-third-color {
+    border-color: var(--third-color);
+}
+
+.border-fourth-color {
+    border-color: var(--fourth-color);
+}
+
+/* NAVBAR */
+#top-nav,
+#mobile-nav,
+.category-icons {
+    background-color: var(--first-color);
+}
+
+#top-nav #location-bar,
+#top-nav #search-bar {
+    background-color: var(--second-color);
+}
+
+#top-nav #search-btn,
+#login-btn {
+    background-color: var(--third-color);
+}
+
+#register-btn {
+    background-color: var(--fourth-color);
+}
+
+#bottom-nav {
+    background-color: var(--second-color);
+}
+
+/* MAIN */
+.end-soon-text {
+    background-color: var(--fifth-color);
+}
+
+/* LOGIN */
+#login-form button {
+    background-color: var(--third-color);
+}
+
+#register-form button {
+    background-color: var(--fourth-color);
+}
+
+@media (min-width: 768px) {
+    .content-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+

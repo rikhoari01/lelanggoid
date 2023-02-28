@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lelang Indonesia - DJKN</title>
+
+  <!-- Facvicon -->
+  <link rel="shortcut icon" href="https://lelang.go.id/static/desktop/img/lelang-icon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://lelang.go.id/static/desktop/img/logo_lelang_02.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section id="navbar">
+    <div id="mobile-nav" class="fixed w-full top-0 z-20 inline-block md:hidden">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <a href="/" class="inline-block">
+          <img class="h-7" src="https://lelang.go.id/static/desktop/img/logo-lelang-indonesia51.png"
+            alt="lelang-indonesia">
+        </a>
+        <div id="button" class="w-[55%] flex items-center justify-between">
+          <div id="search-btn" class="flex items-center justify-center bg-white rounded-full h-7 w-7">
+            <i class="fa-solid fa-search"></i>
+          </div>
+          <a href="/login.html" id="login-btn" class="inline-block px-2 py-1 rounded text-sm text-white"><i
+              class="fa-solid fa-sign-in"></i>
+            Masuk</a>
+          <a href="/register.html" id="register-btn" class="inline-block px-2 py-1 rounded text-sm text-white"><i
+              class="fa-solid fa-edit"></i>
+            Daftar</a>
+        </div>
+      </div>
+    </div>
+    <div id="top-nav" class="fixed w-full top-0 z-20 md:inline-block hidden">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center p-5 gap-y-3">
+        <a href="/" class="inline-block">
+          <img class="h-10" src="https://lelang.go.id/static/desktop/img/logo-lelang-indonesia51.png"
+            alt="lelang-indonesia">
+        </a>
+        <div id="location-bar"
+          class="flex items-center px-2 text-white h-[36px] w-full md:w-[20%] lg:w-[20%] inline-block rounded-md">
+          <i class="fa-solid fa-location-dot"></i>
+          <input type="search" name="location_search_bar" id="location-box" class="w-full bg-transparent px-2"
+            placeholder="Cari Lokasi">
+        </div>
+        <div id="search-bar"
+          class="flex items-center px-2 text-white h-[36px] w-full md:w-[30%] lg:w-[50%] inline-block rounded-md">
+          <i class="fa-solid fa-search"></i>
+          <input type="search" name="search_bar" id="search-box" class="w-[80%] md:w-[90%] bg-transparent px-2"
+            placeholder="Cari Barang Lelang ...">
+          <div id="search-btn" class="w-[20%] md:w-[10%] text-center rounded-md text-sm py-1 cursor-pointer">Cari</div>
+        </div>
+        <div id="right-btn" class="inline-block text-white text-sm">
+          <a href="/login.html" id="login-btn" class="inline-block px-3 py-2 rounded mr-2"><i class="fa-solid fa-sign-in"></i>
+            Masuk</a>
+          <a href="/register.html" id="register-btn" class="inline-block px-3 py-2 rounded"><i class="fa-solid fa-edit"></i>
+            Daftar</a>
+        </div>
+      </div>
+    </div>
+    <div id="bottom-nav" class="w-full text-white">
+      <div class="container mt-[60px] mx-auto flex justify-between items-center p-4 md:hidden drop-shadow">
+        <p class="inline-block">Menu</p>
+        <i id="menu-btn" class="fa-solid fa-bars transition-all"></i>
+      </div>
+      <div id="menu-list"
+        class="left-[-100%] absolute background-first-color md:bg-transparent z-10 md:mt-[80px] md:static container mx-auto text-xs md:flex md:justify-between md:items-center px-0 py-2 md:py-4 transition-all">
+        <ul class="left flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:inline-block mb-2 md:mb-0">
+          <li class="inline-block px-3 md:px-4">
+            <a href="">Beranda</a>
+          </li>
+          <li class="inline-block px-3 md:px-4">
+            <a href="">Kantor</a>
+          </li>
+          <li class="inline-block px-3 md:px-4">
+            <a href="">UMKM</a>
+          </li>
+          <li class="inline-block px-3 md:px-4">
+            <a href="">Lelang Sewa</a>
+          </li>
+        </ul>
+        <div class="right md:mr-2 flex flex-col gap-y-2 md:inline-block">
+          <a href="" class="md:inline-block px-3">Cara Mengikuti Lelang</a>
+          <a href="" class="md:inline-block px-3">Syarat dan Ketentuan</a>
+          <a href="" class="md:inline-block px-3">F.A.Q</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="slider w-full">
+    <article x-data="slider" class="relative w-full flex flex-shrink-0 overflow-hidden shadow-xl">
+      <template x-for="(image, index) in images">
+        <figure class="h-52 md:h-[calc(100vh-128px)]" x-show="currentIndex == index + 1"
+          x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300"
+          x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+          <img :src="image" alt="Image" class="absolute inset-0 z-5 h-full w-full object-cover" />
+        </figure>
+      </template>
+
+      <div class="rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-5 opacity-80">
+        <span x-text="currentIndex"></span> /
+        <span x-text="images.length"></span>
+      </div>
+
+      <div class="button-image w-full h-full absolute flex items-center justify-between px-5 md:px-10">
+        <button @click="back()"
+          class="rounded-full shadow-md w-7 h-7 md:w-11 md:h-11 bg-gray-100 hover:bg-gray-200 flex items-center justify-center opacity-70">
+          <svg
+            class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button @click="next()"
+          class="rounded-full shadow-md w-7 h-7 md:w-11 md:h-11 bg-gray-100 hover:bg-gray-200 flex items-center justify-center opacity-70">
+          <svg
+            class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </article>
+  </section>
+
+  <section id="end-soon-box" class="container mx-auto mt-10 p-4 border-solid border-2 border-inherit">
+    <div class="flex justify-between items-center">
+      <p class="end-soon-text text-semibold text-white text-sm py-2 px-3 rounded-lg">Lelang Segera Berakhir</p>
+      <div class="md:w-[70%] h-3 bg-blue md:inline-block"></div>
+      <div class="button text-xl first-color">
+        <i class="fa-solid fa-chevron-circle-left"></i>
+        <i class="fa-solid fa-chevron-circle-right"></i>
+      </div>
+    </div>
+    <div class="mt-5 flex gap-x-2 items-center overflow-auto pb-10">
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group">
+        <div class="min-w-[200px] rounded overflow-auto shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+      <a href="" class="inline-block group bg-white">
+        <div class="min-w-[200px] rounded overflow-hidden shadow-lg">
+          <div class="image relative">
+            <img class="w-full"
+              src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+              alt="Sunset in the mountains">
+            <div
+              class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+              <p class="text-gray-700 text-base text-center">
+                1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <div class="font-bold text-base mb-2">Rp 11.275.000.000</div>
+            <!-- <p class="text-gray-700 text-base h-7 overfof-hidden text-elipsis">
+                        1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                      </p> -->
+          </div>
+          <div class="px-2 pb-2 text-center">
+            <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="filter-nav" class="w-full background-third-color fixed top-[80px] text-white z-10 hidden xl:inline-block invisible transition">
+    <div class="container mx-auto flex justify-between items-center gap-x-2 py-3">
+      <select name="" id="" class="w-[30%] px-2 py-1 background-first-color rounded">
+        <option value="" disabled hidden selected>Pilih Kategori</option>
+        <option value="">Rumah</option>
+        <option value="">Rumah</option>
+        <option value="">Rumah</option>
+        <option value="">Rumah</option>
+      </select>
+      <input type="text" class="w-[30%] px-2 py-1 background-first-color text-white rounded" placeholder="Harga Minimum">
+      <input type="text" class="w-[30%] px-2 py-1 background-first-color text-white rounded" placeholder="Harga Maksimum">
+      <div class="w-[10%] py-1 px-2 background-fourth-color cursor-pointer text-center font-medium">Terapkan</div>
+    </div>
+  </section>
+
+  <main id="main-content" class="container mx-auto mt-10">
+    <p id="title" class="text-3xl text-center font-bold">Galeri Lot <span class="first-color">Lelang</span></p>
+
+    <section id="filter" class="hidden xl:inline-block w-full p-2 flex flex-col items-center mt-5">
+      <div id="filter-category" class="w-full flex justify-between items-center">
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-mountain"></i>
+          <p class="ml-2">Tanah</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-house"></i>
+          <p class="ml-2">Rumah</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-industry"></i>
+          <p class="ml-2">Pabrik</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-hotel"></i>
+          <p class="ml-2">Hotel</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-house-chimney"></i>
+          <p class="ml-2">Villa</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-car-alt"></i>
+          <p class="ml-2">Mobil</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-motorcycle"></i>
+          <p class="ml-2">Motor</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-shop"></i>
+          <p class="ml-2">Toko</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-building"></i>
+          <p class="ml-2">Gedung</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-warehouse"></i>
+          <p class="ml-2">Gudang</p>
+        </a>
+        <a href="#"
+          class="category-icon flex items-center justify-center px-3 py-1 rounded-full background-first-color text-white text-center">
+          <i class="fa-solid fa-bars"></i>
+          <p class="ml-2">Lainnya</p>
+        </a>
+      </div>
+
+      <div class="w-full flex justify-between items-center mt-5">
+        <div id="price-filter" class="w-full border-solid border-2 border-inherit rounded p-3 bg-slate-100">
+          <p class="text-center font-bold">Rentang Harga Lelang</p>
+          <div class="w-full flex justify-between items-center gap-x-2 mt-2">
+            <div id="min-price" class="w-[40%] border-solid border-2 border-inherit rounded flex items-center">
+              <div class="bg-slate-500 inline-block h-8 flex items-center px-2 rounded-l">Rp</div>
+              <input type="text" name="" id="" class="inline-block h-8 w-full p-2" placeholder="Harga Minimum">
+            </div>
+            <div id="max-price" class="w-[40%] border-solid border-2 border-inherit rounded flex items-center">
+              <div class="bg-slate-500 inline-block h-8 flex items-center px-2 rounded-l">Rp</div>
+              <input type="text" name="" id="" class="inline-block h-8 w-full p-2" placeholder="Harga Maksimum">
+            </div>
+            <div id="filter-btn" class="background-first-color w-[20%] text-white rounded h-8 flex items-center justify-center font-medium cursor-pointer">Terapkan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="filter-mobile" class="w-full">
+      <div class="filter-btn p-3 mt-2">
+        <div class="xl:hidden background-first-color flex justify-center items-center rounded text-white font-semibold py-1">Filter</div>
+      </div>
+      <div id="filter-nav-mobile" class="fixed invisible xl:hidden transition-all z-10 w-full top-[60px] p-3 background-third-color text-white flex justify-between items-center gap-x-1">
+        <select name="" id="" class="w-[35%] px-2 py-1 background-first-color">
+          <option value="">Pilih Kategori</option>
+        </select>
+        <input type="text" class="w-[calc(65%/2)] px-2 py-1 background-first-color text-white" placeholder="Min Harga">
+        <input type="text" class="w-[calc(65%/2)] px-2 py-1 background-first-color text-white" placeholder="Maks Harga">
+      </div>
+    </section>
+
+    <section id="auction-content" class="w-full px-3 mt-5">
+      <div class="flex justify-between items-center">
+        <select name="" id="" class="w-[60%] md:w-[30%] px-2 py-1 border-solid border-2 border-inherit">
+          <option value="">Urutkan berdasarkan</option>
+        </select>
+        <!-- <div class="flex items-center text-2xl bg-slate-100 border-solid border-2 border-inherit text-center color-first text-xl py-1 px-2 rounded">
+          <i class="fa-solid fa-grid"></i>
+          <i class="fa-solid fa-list"></i>
+          <i class='bx bxs-grid-alt'></i>
+          <i class='bx bx-list-ul'></i>
+        </div> -->
+      </div>
+
+      <div id="content" class="mt-3 w-full grid grid-cols-2 gap-2 md:grid-cols-4 lg:grid-cols-6">
+          <a href="/detail.html" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+          <a href="" class="group inline-block rounded shadow-lg py-2 bg-white">
+            <div class="image relative">
+              <img class="w-full"
+                src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-thumb/200/191624/2022/09/13/632025623ede5-13647vqO-foto-6295541.jpg"
+                alt="Sunset in the mountains">
+              <div
+                class="details hidden w-full h-full group-hover:flex group-hover:justify-between group-hover:items-center absolute top-0 bg-slate-50/80">
+                <p class="text-gray-700 text-base text-center">
+                  1 bidang tanah dengan total luas 17595 m2 berikut bangunan di Kabupaten Minahasa Bank Sulutgo.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-3">
+              <div class="font-bold text-base">Rp 11.275.000.000</div>
+            </div>
+            <div class="px-2 text-center">
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-fourth-color mb-2"><i
+                class="fa-solid fa-clock"></i> 25-01-2023 10:15</span>
+              <span class="inline-block rounded-full px-3 py-1 text-xs font-semibold text-white background-first-color"><i
+                  class="fa-solid fa-location-dot"></i> Kabupaten Minahasa</span>
+            </div>
+          </a>
+      </div>
+
+      <div id="page" class="w-full flex gap-x-2 justify-center items-center mt-10">
+        <div class="background-fourth-color flex justify-center items-center w-7 h-7 text-white rounded"><<</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">1</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">2</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">3</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">4</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">5</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">6</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">7</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">8</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">9</div>
+        <div class="background-first-color flex justify-center items-center w-7 h-7 text-white rounded">10</div>
+        <div class="background-fourth-color flex justify-center items-center w-7 h-7 text-white rounded">>></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="footer" class="w-full mt-20">
+    <div id="first-footer" class="w-full bg-slate-200 py-5 border-solid border-t-2 md:border-t-4 border-fourth-color">
+      <div class="container mx-auto flex flex-row justify-between items-center">
+        <div class="image-1 hidden md:inline-block w-full md:w-[35%] text-center">
+          <img src="https://play-lh.googleusercontent.com/ASPfGThzJl77vqAGxwsnK88Luo7RQpDoOo6o-TfmhfgGCzxEsSKBHD0HDTU1w_j9bQ=w526-h296-rw" alt="image-1" class="h-44 md:h-56 inline-block">
+          <img src="https://play-lh.googleusercontent.com/bODoa_sFMeilFo6OEXvIaTR7BL7cJRqvpTnjjmMJD6cnh1JKjYGX4wFnjfTrcwHA4dk=w526-h296-rw" alt="image-2" class="h-44 md:h-56 inline-block">
+          <img src="https://play-lh.googleusercontent.com/6pJgGN3hEHHpHlolLc2yNLCPfUl_14neYs0SZZVOgAJtuNkEHuVci2VLDuOGM9Awbfhg=w526-h296-rw" alt="image-3" class="h-44 md:h-56 inline-block">
+        </div>
+        <div class="w-full md:w-[40%] px-5 hidden md:inline-block">
+          <span class="text-lg md:text-3xl font-bold">COBA APLIKASI LELANG</span>
+          <p class="text-sm md:text-lg font-medium">Cari barang lelang dengan harga terbaik di sekitar anda.</p>
+        </div>
+        <div class="w-full md:w-[25%] px-5 text-center">
+          <span class="text-base md:text-lg font-semibold">DOWNLOAD APLIKASI LELANG</span>
+          <a href="" class="w-full flex justify-center items-center py-3">
+            <img src="https://statics.olx.co.id/external/base/img/playstore_2x.webp" alt="play-store">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="second-footer" class="w-full background-first-color py-5">
+      <div class="container mx-auto flex flex-col md:flex-row gap-y-5 justify-between px-3">
+        <div class="w-full md:w-[20%]">
+          <span class="font-medium text-white inline-block mb-2">Layanan Lelang</span>
+          <ul class="text-white ml-2 text-sm">
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> Profil Lelang</a>
+            </li>
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> Profil Balai Lelang</a>
+            </li>
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> Monitoring Layanan</a>
+            </li>
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> Kaleidoskop</a>
+            </li>
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> Laporan Tahunan</a>
+            </li>
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> e-Learning Lelang</a>
+            </li>
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> Modul Layanan Internal</a>
+            </li>
+            <li class="my-1 hover:translate-x-1">
+              <a href="">> Pengumuman</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:w-[40%]">
+          <span class="font-medium text-white inline-block mb-2">Mitra Lelang</span>
+          <div class="w-full grid grid-cols-4 gap-1">
+            <img src="https://lelang.go.id/static/desktop/img/logo-bni-80.jpg" alt="">
+            <img src="https://lelang.go.id/static/desktop/img/logo-mandiri-80.jpg" alt="">
+            <img src="https://lelang.go.id/static/desktop/img/logo-bri-80.jpg" alt="">
+            <img src="https://lelang.go.id/static/desktop/img/logo-btn-80.jpg" alt="">
+          </div>
+          <div class="mt-5 text-white text-sm">
+            <span class="font-medium">Halaman ini diproses dalam :</span>
+            <span id="time">0.28888 detik</span>
+          </div>
+        </div>
+        <div class="w-full md:w-[40%] md:pl-5">
+          <span class="font-medium text-white inline-block mb-2">Hubungi Kami</span>
+          <p class="text-white text-sm">Direktorat Jenderal Kekayaan Negara</p>
+          <ul class="text-white text-sm ml-2 mt-2">
+            <li class="my-1">
+              <i class="bx bx-location-plus"></i> <span class="font-medium">Alamat :</span> Gedung Syafruddin Prawiranegara II, Jl. Lapangan Banteng Timur 2-4, Jakarta Pusat
+            </li>
+            <li class="my-1">
+              <i class="bx bx-phone"></i> <span class="font-medium">Call Center :</span> 150-991
+            </li>
+            <li class="my-1">
+              <i class="bx bx-mail-send"></i> <span class="font-medium">Email :</span> halodjkn@kemenkeu.go.id
+            </li>
+            <li class="my-1">
+              <i class="bx bx-globe"></i> <span class="font-medium">Situs Web :</span> https://www.djkn.kemenkeu.go.id
+            </li>
+          </ul>
+          <img src="/logo.png" alt="" class="h-10 mt-5">
+        </div>
+      </div>
+    </div>
+    <div id="third-footer" class="w-full background-second-color py-3">
+      <div class="container mx-auto text-center text-white text-xs md:text-base">
+        <span>&copy; Copyright <span id="year"></span>. Direktorat Jenderal Kekayaan Negara. Kementrian Keuangan RI</span>
+      </div>
+    </div>
+  </section>
+
+  <div id="time-server"
+    class="fixed bottom-5 left-5 text-white flex items-center background-third-color justify-center px-3 py-3 md:px-3 md:py-2 rounded-full text-sm transition-all duration-500">
+    <i class="fa-solid fa-clock-four"></i>
+    <div id="time-server-content" class="hidden md:inline-block transition-all duration-500">
+      <p id="time-server-text" class="ml-2 mr-2 inline-block"></p>
+      <i id="refresh-time" class="fa-solid fa-refresh cursor-pointer inline-block"></i>
+    </div>
+  </div>
+
+  <div id="call-centre" class="fixed bottom-5 right-5 text-white background-third-color flex items-center justify-center px-3 py-2 rounded-full text-sm">
+    <i class="fa-solid fa-user-tie"></i>
+    <span class="ml-2">Bantuan</span>
+    <!-- <img src="https://www.freeiconspng.com/uploads/help-desk-icon-8.png" class="h-5 grayscale" alt="Png Download Help Desk Icon" /> -->
+  </div>
+
+  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lelang Indonesia - DJKN</title>
+
+    <!-- Facvicon -->
+    <link rel="shortcut icon" href="https://lelang.go.id/static/desktop/img/lelang-icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://lelang.go.id/static/desktop/img/logo_lelang_02.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section id="navbar">
+        <div id="mobile-nav" class="fixed w-full top-0 z-20 inline-block md:hidden">
+            <div class="container mx-auto flex justify-between items-center p-4">
+                <a href="/" class="inline-block">
+                    <img class="h-7" src="https://lelang.go.id/static/desktop/img/logo-lelang-indonesia51.png"
+                        alt="logo-lelang-indonesia">
+                </a>
+                <div id="button" class="w-[55%] flex items-center justify-between">
+                    <div id="search-btn" class="flex items-center justify-center bg-white rounded-full h-7 w-7">
+                        <i class="fa-solid fa-search"></i>
+                    </div>
+                    <a href="/login.html" id="login-btn" class="inline-block px-2 py-1 rounded text-sm text-white"><i
+                            class="fa-solid fa-sign-in"></i>
+                        Masuk</a>
+                    <a href="/register.html" id="register-btn" class="inline-block px-2 py-1 rounded text-sm text-white"><i
+                            class="fa-solid fa-edit"></i>
+                        Daftar</a>
+                </div>
+            </div>
+        </div>
+        <div id="top-nav" class="fixed w-full top-0 z-20 md:inline-block hidden">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center p-5 gap-y-3">
+                <a href="/" class="inline-block">
+                    <img class="h-10" src="https://lelang.go.id/static/desktop/img/logo-lelang-indonesia51.png"
+                        alt="logo-lelang-indonesia">
+                </a>
+                <div id="location-bar"
+                    class="flex items-center px-2 text-white h-[36px] w-full md:w-[20%] lg:w-[20%] inline-block rounded-md">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="search" name="location_search_bar" id="location-box" class="w-full bg-transparent px-2"
+                        placeholder="Cari Lokasi">
+                </div>
+                <div id="search-bar"
+                    class="flex items-center px-2 text-white h-[36px] w-full md:w-[30%] lg:w-[50%] inline-block rounded-md">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="search" name="search_bar" id="search-box"
+                        class="w-[80%] md:w-[90%] bg-transparent px-2" placeholder="Cari Barang Lelang ...">
+                    <div id="search-btn" class="w-[20%] md:w-[10%] text-center rounded-md text-sm py-1 cursor-pointer">
+                        Cari</div>
+                </div>
+                <div id="right-btn" class="inline-block text-white text-sm">
+                    <a href="/login.html" id="login-btn" class="inline-block px-3 py-2 rounded mr-2"><i class="fa-solid fa-sign-in"></i>
+                        Masuk</a>
+                    <a href="/register.html" id="register-btn" class="inline-block px-3 py-2 rounded"><i class="fa-solid fa-edit"></i>
+                        Daftar</a>
+                </div>
+            </div>
+        </div>
+        <div id="bottom-nav" class="w-full text-white">
+            <div class="container mt-[60px] mx-auto flex justify-between items-center p-4 md:hidden drop-shadow">
+                <p class="inline-block">Menu</p>
+                <i id="menu-btn" class="fa-solid fa-bars transition-all"></i>
+            </div>
+            <div id="menu-list"
+                class="left-[-100%] absolute background-first-color md:bg-transparent z-10 md:mt-[80px] md:static container mx-auto text-xs md:flex md:justify-between md:items-center px-0 py-2 md:py-4 transition-all">
+                <ul class="left flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:inline-block mb-2 md:mb-0">
+                    <li class="inline-block px-3 md:px-4">
+                        <a href="">Beranda</a>
+                    </li>
+                    <li class="inline-block px-3 md:px-4">
+                        <a href="">Kantor</a>
+                    </li>
+                    <li class="inline-block px-3 md:px-4">
+                        <a href="">UMKM</a>
+                    </li>
+                    <li class="inline-block px-3 md:px-4">
+                        <a href="">Lelang Sewa</a>
+                    </li>
+                </ul>
+                <div class="right md:mr-2 flex flex-col gap-y-2 md:inline-block">
+                    <a href="" class="md:inline-block px-3">Cara Mengikuti Lelang</a>
+                    <a href="" class="md:inline-block px-3">Syarat dan Ketentuan</a>
+                    <a href="" class="md:inline-block px-3">F.A.Q</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="my-10 w-full">
+        <div class="container mx-auto grid md:grid-cols-2 gap-5">
+            <div class="image w-full">
+                <div class="main-image flex justify-center">
+                    <img src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-full/200303/2022/10/11/63451bc707515-61543vec-foto-642306845.jpg" alt="" class="max-w-[360px] md:max-w-[432px] rounded drop-shadow">
+                </div>
+                <div class="flex items-center justify-center gap-x-2 px-2 py-5">
+                    <div class="left-arrow text-2xl">
+                        <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <div class="flex items-center gap-x-2 overflow-auto">
+                        <img class="w-[calc(344px/3)] lg:w-[100px] rounded" src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-full/168717/2022/06/28/62ba744e62e54-39617Osi-foto-59571209a.jpg" alt="">
+                        <img class="w-[calc(344px/3)] lg:w-[100px] rounded" src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-full/168717/2022/06/28/62ba744e62e54-39617Osi-foto-59571209a.jpg" alt="">
+                        <img class="w-[calc(344px/3)] lg:w-[100px] rounded" src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-full/168717/2022/06/28/62ba744e62e54-39617Osi-foto-59571209a.jpg" alt="">
+                        <img class="w-[calc(344px/3)] lg:w-[100px] rounded" src="https://file.lelangdjkn.kemenkeu.go.id/lelang-foto-full/168717/2022/06/28/62ba744e62e54-39617Osi-foto-59571209a.jpg" alt="">
+                    </div>
+                    <div class="left-arrow text-2xl">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="share max-w-[432px] mx-auto mt-5 px-[31px] lg:px-0">
+                    <span class="text-sm font-light">Bagikan</span>
+                    <div class="flex items-center gap-x-2 py-2">
+                        <a href="">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="drop-shadow h-5"/>
+                        </a>
+                        <a href="">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" class="drop-shadow h-5"/>
+                        </a>
+                        <a href="">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="drop-shadow h-5"/>
+                        </a>
+                        <a href="">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="drop-shadow h-5"/>
+                        </a>
+                        <a href="">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" class="drop-shadow h-5"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-lelang w-full">
+                <div class="px-[31px] md:px-0">
+                    <div class="limit">
+                        <span class="text-sm font-light">Nilai Limit</span>
+                        <p id="price" class="text-3xl font-bold first-color">Rp 398.200.000</p>
+                    </div>
+                    <div class="info pt-5">
+                        <span class="text-sm font-light">Informasi</span>
+                        <p>1 bidang tanah dengan total luas 150 m2 berikut bangunan di Kota Bontang</p>
+                    </div>
+                    <div class="detail pt-5">
+                        <span class="text-sm font-light">Detail Lelang</span>
+                        <table class="w-full text-sm mt-2">
+                            <tbody>
+                                <tr class="bg-gray-200 border-b">
+                                    <td class="text-gray-900 px-1.5 py-3">Cara Penawaran</td>
+                                    <td class="text-gray-900 px-1.5 py-3 font-semibold">Close Bidding</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="text-gray-900 px-1.5 py-3">Jaminan</td>
+                                    <td class="text-gray-900 px-1.5 py-3 font-semibold">Rp 80.000.000</td>
+                                </tr>
+                                <tr class="bg-gray-200 border-b">
+                                    <td class="text-gray-900 px-1.5 py-3">Batas Akhir Jaminan</td>
+                                    <td class="text-gray-900 px-1.5 py-3 font-semibold">30 Januari 2023</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="text-gray-900 px-1.5 py-3">Batas AKhir Penawaran</td>
+                                    <td class="text-gray-900 px-1.5 py-3 font-semibold">31 Januari 2023 08.00 WIB</td>
+                                </tr>
+                                <tr class="bg-gray-200 border-b">
+                                    <td class="text-gray-900 px-1.5 py-3">Penyelenggara</td>
+                                    <td class="text-gray-900 px-1.5 py-3 font-semibold">KPKNL Bontang</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="text-gray-900 px-1.5 py-3">Kode Lot Lelang</td>
+                                    <td class="text-gray-900 px-1.5 py-3 font-semibold">MVX5NZ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-5">
+                        <a href="" class="button inline-block w-full py-3 background-first-color text-white text-center rounded"><i class="fa fa-square-check"></i> Ikuti Lelang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-3 lg:px-0 mt-8">
+            <details class="bg-gray-200 shadow rounded px-5 py-3 mb-5 cursor-pointer" open>
+                <summary>Uraian</summary>
+                <table class="w-full mt-3">
+                    <thead>
+                        <tr class="bg-gray-300 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Jenis Barang</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Bukti Kepemilikan</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Uraian</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-100 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Tidak bergerak, Tanah berikut bangunan</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">SHM NO. 436 tanggal 11 Januari 1994</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">
+                                <p>
+                                    <span class="font-semibold">Luas : </span>150 m2
+                                </p>
+                                <p>
+                                    <span class="font-semibold">Lokasi : </span>JL KALIMANTAN BLOK I3 BTN KCY RT.18 KELURAHAN API-API(DAHULU BONTANG BARU) KECAMATAN BONTANG UTARA KOTA BONTANG PROVINSI KALIMANTAN TIMUR
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+            <details class="bg-gray-200 shadow rounded px-5 py-3 mb-5 cursor-pointer">
+                <summary>Lampiran</summary>
+                <div class="mt-3">
+                    <embed type="application/pdf" src="https://file.lelangdjkn.kemenkeu.go.id/view-file/2023/01/25/63d0dd8ac4682-10786Cuv-pengumuman-166945023.pdf" class="w-full h-[500px]"></embed>
+                </div>
+            </details>
+            <details class="bg-gray-200 shadow rounded px-5 py-3 mb-5 cursor-pointer">
+                <summary>Info Penjual</summary>
+                <table class="w-full mt-3">
+                    <tbody>
+                        <tr class="bg-gray-300 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Nama Penjual</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3 font-semibold">PT. BANK RAKYAT INDONESIA (Persero) Tbk, BONTANG</td>
+                        </tr>
+                        <tr class="bg-gray-100 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Alamat Penjual</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3 font-semibold">Jl MT Haryono No.9 , Kota Bontang, Kalimantan Timur</td>
+                        </tr>
+                        <tr class="bg-gray-300 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Kontak Penjual</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3 font-semibold">(0548) 21085</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+            <details class="bg-gray-200 shadow rounded px-5 py-3 mb-5 cursor-pointer">
+                <summary>Info Penyelenggara</summary>
+                <table class="w-full mt-3">
+                    <tbody>
+                        <tr class="bg-gray-300 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Nama Penyelenggara</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3 font-semibold">KPKNL Bontang</td>
+                        </tr>
+                        <tr class="bg-gray-100 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Alamat Penyelenggara</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3 font-semibold">Jalan M.H. Thamrin Nomor 43 Bontang</td>
+                        </tr>
+                        <tr class="bg-gray-300 border-b">
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3">Kontak Penyelenggara</td>
+                            <td class="text-gray-900 px-1.5 md:px-3 py-3 font-semibold">(0548) 3036453</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+        </div>
+    </main>
+
+    <footer class="w-full background-second-color py-3">
+        <div class="container mx-auto text-center text-white text-xs md:text-base">
+          <span>&copy; Copyright <span id="year"></span>. Direktorat Jenderal Kekayaan Negara. Kementrian Keuangan RI</span>
+        </div>
+    </footer>
+
+    <div id="time-server"
+    class="fixed bottom-5 left-5 text-white flex items-center background-third-color justify-center px-3 py-3 md:px-3 md:py-2 rounded-full text-sm transition-all duration-500">
+    <i class="fa-solid fa-clock-four"></i>
+    <div id="time-server-content" class="hidden md:inline-block transition-all duration-500">
+      <p id="time-server-text" class="ml-2 mr-2 inline-block"></p>
+      <i id="refresh-time" class="fa-solid fa-refresh cursor-pointer inline-block"></i>
+    </div>
+  </div>
+
+  <div id="call-centre" class="fixed bottom-5 right-5 text-white background-third-color flex items-center justify-center px-3 py-2 rounded-full text-sm">
+    <i class="fa-solid fa-user-tie"></i>
+    <span class="ml-2">Bantuan</span>
+    <!-- <img src="https://www.freeiconspng.com/uploads/help-desk-icon-8.png" class="h-5 grayscale" alt="Png Download Help Desk Icon" /> -->
+  </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
